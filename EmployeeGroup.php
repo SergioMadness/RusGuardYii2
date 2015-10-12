@@ -1,6 +1,6 @@
 <?php
 
-namespace datalayer\rusguard;
+namespace datalayerru\rusguard;
 
 class EmployeeGroup
 {

@@ -95,7 +95,7 @@ Yii::$app->skud->getEmployeePhoto($personInfo->ID, 1);
 Yii::$app->skud->getEvents($fromDate = null, $toDate = null, $inoutEventType = null, $page = 1, $pageSize = 20)
 ```
 
-### Listen for notofocations
+### Listen for notifications
 ```php
 $result = Yii::$app->skud->getNotification();
 ```

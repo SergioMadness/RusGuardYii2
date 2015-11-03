@@ -118,20 +118,20 @@ class Skud extends Component
      * $result = stdClass Object
      * (
      *   [DateTime] => 2015-08-06T11:35:53
-     *   [Details] => Ïî êëþ÷ó Íîìåð êëþ÷à 20033968059153 (0x1235EFF02411)
+     *   [Details] => ÐŸÐ¾ ÐºÐ»ÑŽÑ‡Ñƒ ÐÐ¾Ð¼ÐµÑ€ ÐºÐ»ÑŽÑ‡Ð° 20033968059153 (0x1235EFF02411)
      *   [DriverId] => 8a041882-7d14-4ef1-9df6-0ceba9f396a3
      *   [EmployeeId] => 6a3432c6-c93f-4cd1-8796-c0fg45e77143
      *   [IsKeyEvent] =>
      *   [LogMessageId] =>
-     *   [Message] => Âûõîä
+     *   [Message] => Ð’Ñ‹Ñ…Ð¾Ð´
      *   [MessageSubType] => AccessPointExitByKey
      *   [MessageType] => Information
      *   [OperatorId] =>
-     *   [EmployeeFirstName] => Èìÿ
-     *   [EmployeeGroupFullPath] => Ãðóïïà
-     *   [EmployeeLastName] => Ôàìèëèÿ
-     *   [EmployeePosition] => Äîëæíîñòü
-     *   [EmployeeSecondName] => Îò÷åñòâî
+     *   [EmployeeFirstName] => Ð˜Ð¼Ñ
+     *   [EmployeeGroupFullPath] => Ð“Ñ€ÑƒÐ¿Ð¿Ð°
+     *   [EmployeeLastName] => Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ
+     *   [EmployeePosition] => Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ
+     *   [EmployeeSecondName] => ÐžÑ‚Ñ‡ÐµÑÑ‚Ð²Ð¾
      * )
      *
      * @return mixed
@@ -140,8 +140,8 @@ class Skud extends Component
     {
         $connectionResult = false;
         try {
-            Yii::info('Óñòàíàâëèâàåòñÿ ñîåäèíåíèå');
-            Yii::info('Îæèäàåì îòâåò');
+            Yii::info('Ð£ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÑ‚ÑÑ ÑÐ¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ðµ');
+            Yii::info('ÐžÐ¶Ð¸Ð´Ð°ÐµÐ¼ Ð¾Ñ‚Ð²ÐµÑ‚');
             $this->addHeader();
             $connectionResult = $this->SOAPClient->GetNotification([
                 'connectionId' => $this->connectioId
@@ -176,8 +176,8 @@ class Skud extends Component
      * @param string $lastName
      * @return \datalayer\rusguard\Employee
      */
-    public function addEmployee($groupId, $firstName = 'Ãîñòü',
-                                $lastName = 'Ãîñòü')
+    public function addEmployee($groupId, $firstName = 'Ð“Ð¾ÑÑ‚ÑŒ',
+                                $lastName = 'Ð“Ð¾ÑÑ‚ÑŒ')
     {
         $result = null;
         try {
@@ -218,7 +218,7 @@ class Skud extends Component
                 time() - 10 * 60);
             $data->keyData->EndDate     = date('Y-m-d\TH:i:s.811P',
                 time() + 60 * 60 * 24 * 365);
-            $data->keyData->Description = 'Êàðòà íîìåð:'.$cardNumber;
+            $data->keyData->Description = 'ÐšÐ°Ñ€Ñ‚Ð° Ð½Ð¾Ð¼ÐµÑ€:'.$cardNumber;
 
             if (!$force) {
                 $result = $this->SOAPClient->AssignAcsKeyForEmployee($data);
@@ -447,9 +447,9 @@ class Skud extends Component
      *                                     [ContentData] =>
      *                                     [ContentType] =>
      *                                     [DateTime] => 2015-08-12T00:02:20
-     *                                     [Details] => Ïî êíîïêå òóðíèêåòà
+     *                                     [Details] => ÐŸÐ¾ ÐºÐ½Ð¾Ð¿ÐºÐµ Ñ‚ÑƒÑ€Ð½Ð¸ÐºÐµÑ‚Ð°
      *                                     [DriverID] => 8a041882-7d14-4ef1-9df6-0ceba9f396a3
-     *                                     [DriverName] => Òóðíèêåò 5687
+     *                                     [DriverName] => Ð¢ÑƒÑ€Ð½Ð¸ÐºÐµÑ‚ 5687
      *                                     [EmployeeFirstName] =>
      *                                     [EmployeeGroupFullName] =>
      *                                     [EmployeeGroupId] =>
@@ -460,7 +460,7 @@ class Skud extends Component
      *                                     [Id] => 22700
      *                                     [LogMessageSubType] => AccessPointPassUnknown
      *                                     [LogMessageType] => Information
-     *                                     [Message] => Ïðîõîä
+     *                                     [Message] => ÐŸÑ€Ð¾Ñ…Ð¾Ð´
      *                                     [OperatorFullName] =>
      *                                     [OperatorID] =>
      *                                     [OperatorLogin] =>
@@ -473,20 +473,20 @@ class Skud extends Component
      *                                     [ContentData] =>
      *                                     [ContentType] =>
      *                                     [DateTime] => 2015-08-12T07:31:52
-     *                                     [Details] => Ïî êëþ÷ó Íîìåð êëþ÷à 4489993822848 (0x041411C29900)
+     *                                     [Details] => ÐŸÐ¾ ÐºÐ»ÑŽÑ‡Ñƒ ÐÐ¾Ð¼ÐµÑ€ ÐºÐ»ÑŽÑ‡Ð° 4489993822848 (0x041411C29900)
      *                                     [DriverID] => 8a041882-7d14-4ef1-9df6-0ceba9f396a3
-     *                                     [DriverName] => Òóðíèêåò 6547
-     *                                     [EmployeeFirstName] => Èâàí
-     *                                     [EmployeeGroupFullName] => Óïðàâëÿþùàÿ êîìïàíèÿ
+     *                                     [DriverName] => Ð¢ÑƒÑ€Ð½Ð¸ÐºÐµÑ‚ 6547
+     *                                     [EmployeeFirstName] => Ð˜Ð²Ð°Ð½
+     *                                     [EmployeeGroupFullName] => Ð£Ð¿Ñ€Ð°Ð²Ð»ÑÑŽÑ‰Ð°Ñ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ñ
      *                                     [EmployeeGroupId] => ee04428e-4519-4d48-8e65-e9e0d2313687
-     *                                     [EmployeeGroupName] => Óïðàâëÿþùàÿ êîìïàíèÿ
+     *                                     [EmployeeGroupName] => Ð£Ð¿Ñ€Ð°Ð²Ð»ÑÑŽÑ‰Ð°Ñ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ñ
      *                                     [EmployeeID] => 53549f4b-946a-47f8-b904-9fc8f5f88783
-     *                                     [EmployeeLastName] => Èâàíîâ
-     *                                     [EmployeeSecondName] => Èâàíîâè÷
+     *                                     [EmployeeLastName] => Ð˜Ð²Ð°Ð½Ð¾Ð²
+     *                                     [EmployeeSecondName] => Ð˜Ð²Ð°Ð½Ð¾Ð²Ð¸Ñ‡
      *                                     [Id] => 22711
      *                                     [LogMessageSubType] => AccessPointEntryByKey
      *                                     [LogMessageType] => Information
-     *                                     [Message] => Âõîä
+     *                                     [Message] => Ð’Ñ…Ð¾Ð´
      *                                     [OperatorFullName] =>
      *                                     [OperatorID] =>
      *                                     [OperatorLogin] =>

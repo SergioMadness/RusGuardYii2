@@ -1,6 +1,6 @@
 {
     "name": "datalayerru/rusguard-yii2",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "Commponent for communication with RusGuard",
     "keywords": ["yii2", "RusGuard", "rgsec", "datalayer"],
     "type": "yii2-extension",

@@ -23,7 +23,7 @@
   ],
   "require": {
     "yiisoft/yii2": "*",
-    "datalayerru/skud": "*"
+    "datalayerru/skud": "dev-master"
   },
   "autoload": {
     "psr-4": {

@@ -11,17 +11,21 @@ class Skud extends Component
      *
      * @var datalayerru\skud\Skud
      */
-    public $instance;
+    private $instance;
 
-    public function init()
+    public function getInstance()
     {
-        $this->instance = new \datalayerru\skud\Skud();
+        if ($this->instance === null) {
+            $this->instance = new \datalayerru\skud\Skud();
+        }
+        return $this->instance;
     }
 
     public function __set($name, $value)
     {
-        if (isset($this->instance->$name)) {
-            $this->instance->$name = $value;
+        $instance = $this->getInstance();
+        if (property_exists($instance, $name)) {
+            $instance->$name = $value;
         } else {
             parent::__set($name, $value);
         }
@@ -29,8 +33,9 @@ class Skud extends Component
 
     public function __get($name)
     {
-        if (isset($this->instance->$name)) {
-            return $this->instance->$name;
+        $instance = $this->getInstance();
+        if (property_exists($instance, $name) || method_exists($instance, $name)) {
+            return $instance->$name;
         } else {
             return parent::__get($name);
         }
@@ -38,6 +43,7 @@ class Skud extends Component
 
     public function __call($name, $arguments)
     {
-        return call_user_func_array($this->instance->$name, $arguments);
+        $instance = $this->getInstance();
+        return call_user_func_array([$instance, $name], $arguments);
     }
 }

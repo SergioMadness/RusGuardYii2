@@ -43,7 +43,11 @@ class Skud extends Component
 
     public function __call($name, $arguments)
     {
-        $instance = $this->getInstance();
-        return call_user_func_array([$instance, $name], $arguments);
+        if (method_exists($this, $name)) {
+            return call_user_func_array([$this, $name], $arguments);
+        } else {
+            $instance = $this->getInstance();
+            return call_user_func_array([$instance, $name], $arguments);
+        }
     }
 }

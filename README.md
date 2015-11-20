@@ -5,12 +5,12 @@
 
 RusGuard-Yii2 is available through [composer](https://getcomposer.org/)
 
-    composer require datalayerru/rusguard-yii2 "dev-master"
+    composer require datalayerru/rusguard-yii2 "*"
   
 Alternatively you can add the following to the `require` section in your `composer.json` manually:
 
 ```json
-"datalayerru/rusguard-yii2": "dev-master"
+"datalayerru/rusguard-yii2": "*"
 ```
 
 Run `composer update` afterwards.
@@ -85,9 +85,9 @@ Yii::$app->skud->getVariable($name);
 Yii::$app->skud->addEmployeePhoto($personInfo->ID, null, $base64Data);
 ```
 
-### Get employee's photo
-```php
-Yii::$app->skud->getEmployeePhoto($personInfo->ID, 1);
+### Get employee info
+    ```php
+$skud->getEmployee($$personInfo->ID)
 ```
 
 ### Get events
@@ -104,7 +104,7 @@ $result = Yii::$app->skud->getNotification();
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Sergey Zinchenko, DataLayer.ru
+Copyright (c) 2015 Sergey Zinchenko, [DataLayer.ru](http://datalayer.ru/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

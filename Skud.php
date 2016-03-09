@@ -1,6 +1,6 @@
 <?php
 
-namespace datalayerru\rusguard;
+namespace professionalweb\rusguard;
 
 use yii\base\Component;
 
@@ -9,14 +9,14 @@ class Skud extends Component
     /**
      * Skud instance
      *
-     * @var datalayerru\skud\Skud
+     * @var professionalweb\skud\Skud
      */
     private $instance;
 
     public function getInstance()
     {
         if ($this->instance === null) {
-            $this->instance = new \datalayerru\skud\Skud();
+            $this->instance = new \professionalweb\skud\Skud();
         }
         return $this->instance;
     }

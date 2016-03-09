@@ -1,6 +1,6 @@
 <?php
 
-namespace datalayerru\rusguard;
+namespace professionalweb\rusguard;
 
 use Yii;
 use yii\data\BaseDataProvider;

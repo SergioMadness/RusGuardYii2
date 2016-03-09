@@ -1,33 +1,34 @@
 {
-  "name": "datalayerru/rusguard-yii2",
-  "version": "0.3.3",
+  "name": "professionalweb/rusguard-yii2",
+  "version": "0.3.4",
   "description": "Commponent for communication with RusGuard",
   "keywords": [
     "yii2",
     "RusGuard",
     "rgsec",
-    "datalayer"
+    "professional web",
+    "web-development"
   ],
   "type": "yii2-extension",
   "license": "MIT",
   "support": {
-    "email": "info@datalayer.ru",
-    "source": "https://github.com/DataLayerRU/RusGuardYii2"
+    "email": "info@web-development.pw",
+    "source": "https://github.com/SergioMadness/RusGuardYii2"
   },
   "authors": [
     {
       "name": "Sergey Zinchenko",
-      "email": "info@datalayer.ru",
-      "homepage": "http://datalayer.ru"
+      "email": "info@web-development.pw",
+      "homepage": "http://web-development.pw"
     }
   ],
   "require": {
     "yiisoft/yii2": "*",
-    "datalayerru/skud": "*"
+    "professionalweb/skud": "*"
   },
   "autoload": {
     "psr-4": {
-      "datalayerru\\rusguard\\": ""
+      "professionalweb\\rusguard\\": ""
     }
   }
 }
